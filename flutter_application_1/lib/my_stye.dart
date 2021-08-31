@@ -5,9 +5,10 @@ class MyStyle {
   Color primaryColor = Color(0xff39821a);
   Color lightColor = Color(0xff6bb249);
 
+  
   TextStyle darStyle() => TextStyle(color: dakColor);
   TextStyle whitStyle() => TextStyle(color: Colors.white);
-  TextStyle pinkStyle() => TextStyle(color: Colors.pink.shade300,fontWeight: FontWeight.w700,fontSize: 17);
+  TextStyle pinkStyle() => TextStyle(color: Colors.pink.shade300, fontWeight: FontWeight.w700, fontSize: 17);
 
   SafeArea buildBackground(double screenWidth, double screenHeight) {
     return SafeArea(
@@ -41,8 +42,8 @@ class MyStyle {
       ),
     );
   }
+
   
   MyStyle();
-
   showLogo() {}
 }

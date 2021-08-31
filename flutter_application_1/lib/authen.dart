@@ -29,7 +29,7 @@ class _AuthenState extends State<Authen> {
             style: MyStyle().whitStyle(),
           ),
           TextButton(
-            onPressed: ()=>Navigator.pushNamed(context, '/createAccount'),
+            onPressed: () => Navigator.pushNamed(context, '/createAccount'),
             child: Text(
               'Create Acciunt',
               style: MyStyle().pinkStyle(),
@@ -48,10 +48,11 @@ class _AuthenState extends State<Authen> {
                 children: [
                   buildUser(),
                   buildPassword(),
+                  buildLogin(),
                   buildSigninGoogle(),
                   buildSigninFacebook(),
                   SizedBox(
-                    height: screenHeigh * 0.01,
+                    height: height * 0.01,
                   )
                 ],
               ),
@@ -62,8 +63,23 @@ class _AuthenState extends State<Authen> {
     );
   }
 
+  Container buildLogin() {
+    return Container(
+      margin: EdgeInsets.only(top: 16),
+      width: width * 0.6,
+      child: ElevatedButton(
+        onPressed: () {},
+        child: Text('Login'),
+        style: ElevatedButton.styleFrom(
+            primary: MyStyle().dakColor,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20))),
+      ),
+    );
+  }
+
   Container buildSigninGoogle() => Container(
-        margin: EdgeInsets.only(top: 8),
+        margin: EdgeInsets.only(top: 16),
         child: SignInButton(
           Buttons.GoogleDark,
           onPressed: () {},
@@ -74,7 +90,7 @@ class _AuthenState extends State<Authen> {
       );
 
   Container buildSigninFacebook() => Container(
-        margin: EdgeInsets.only(top: 8),
+        margin: EdgeInsets.only(top: 16),
         child: SignInButton(
           Buttons.Facebook,
           onPressed: () {},
@@ -89,18 +105,7 @@ class _AuthenState extends State<Authen> {
       margin: EdgeInsets.only(top: 16),
       width: width * 0.6,
       child: TextField(
-        obscureText: redEye,
         decoration: InputDecoration(
-          suffixIcon: IconButton(
-              icon: Icon(
-                redEye ? Icons.read_more_outlined : Icons.remember_me_sharp,
-                color: MyStyle().dakColor,
-              ),
-              onPressed: () {
-                setState(() {
-                  redEye = !redEye;
-                });
-              }),
           prefixIcon: Icon(
             Icons.perm_identity,
             color: MyStyle().dakColor,
@@ -121,8 +126,18 @@ class _AuthenState extends State<Authen> {
     return Container(
       margin: EdgeInsets.only(top: 16),
       width: width * 0.6,
-      child: TextField(
+      child: TextField(obscureText: redEye,
         decoration: InputDecoration(
+          suffixIcon: IconButton(
+              icon: Icon(
+                redEye ? Icons.remove_red_eye_outlined : Icons.remove_red_eye_sharp,
+                color: MyStyle().dakColor,
+              ),
+              onPressed: () {
+                setState(() {
+                  redEye = !redEye;
+                });
+              }),
           prefixIcon: Icon(
             Icons.lock_outlined,
             color: MyStyle().dakColor,
