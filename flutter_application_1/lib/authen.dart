@@ -8,7 +8,7 @@ class Authen extends StatefulWidget {
 }
 
 class _AuthenState extends State<Authen> {
-  late double height, width;
+  double height, width,screen;
   bool redEye = true;
 
   get screenHeigh => null;
@@ -156,7 +156,7 @@ class _AuthenState extends State<Authen> {
 
   Container buildLogo() {
     return Container(
-      width: width * 0.3,
+      width: screen * 0.3,
       child: MyStyle().showLogo(), //ใส่โล้โก้
     );
   }

@@ -5,7 +5,10 @@ class MyStyle {
   Color primaryColor = Color(0xff39821a);
   Color lightColor = Color(0xff6bb249);
 
-  
+  Widget showLogo()=>Image(
+    image: AssetImage('images/menu_3.png'),
+  );
+
   TextStyle darStyle() => TextStyle(color: dakColor);
   TextStyle whitStyle() => TextStyle(color: Colors.white);
   TextStyle pinkStyle() => TextStyle(color: Colors.pink.shade300, fontWeight: FontWeight.w700, fontSize: 17);
@@ -45,5 +48,5 @@ class MyStyle {
 
   
   MyStyle();
-  showLogo() {}
+  
 }
