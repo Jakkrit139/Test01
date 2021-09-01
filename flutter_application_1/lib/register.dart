@@ -11,12 +11,8 @@ class CreateAccount extends StatefulWidget {
 class _CreateAccount extends State<CreateAccount> {
   double height, width ;
   bool redEye = true;
+  String name,user,password;
 
-  set password(String password) {}
-
-  set user(String user) {}
-
-  set name(String name) {}
   
   @override
   void initState() {
@@ -163,6 +159,7 @@ class _CreateAccount extends State<CreateAccount> {
                     ),
                   ),
                   onPressed: () {
+                    print('name = $name, user = $user, password = $password');
                     if ((name?.isEmpty??true)||
                     (user?.isEmpty??true)||
                     (password?.isEmpty??true)){
@@ -175,5 +172,4 @@ class _CreateAccount extends State<CreateAccount> {
             );     
           }
   
-        
-
+}
